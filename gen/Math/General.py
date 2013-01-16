@@ -32,7 +32,8 @@ class MathObject:
         pass
     def derivate(self, var):
      	raise NotImplementedError() 
-
+    def reduce(self, vars):
+	pass
       
       
 class Number(MathObject):
