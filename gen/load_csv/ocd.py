@@ -2,7 +2,8 @@
 # x = open_csv("table1.csv")
 # now all the variables are stored in x
 import csv 
-import errorclass
+import errorclass as er
+import numpy as np
 def open_csv(name,errorfy=False):
         class Bunch(object):
           def __init__(self, adict):
@@ -32,18 +33,12 @@ def open_csv(name,errorfy=False):
                         else:
                                 errors+=[k]
                 for k in variables:
-                        if "S"+k in errors:
-                                result[k]=errorclass.Errorclass(data_[k],data_["S"+k])
+                        if k[-3::]!="std":
+                                if "S"+k in errors:
+                                        result[k]=er.Errorclass(data_[k],data_["S"+k])
+                                else:
+                                        result[k]=data_[k]
                         else:
-                                result[k]=data_[k]
+                                ss=np.array(data_[k]).std()
+                                result[k]=er.Errorclass(data_[k],ss)
                 return Bunch(result)
-
-
-
-
-
-                                
-
-
-
-                                
