@@ -6,7 +6,7 @@ C_MINUS     = 1.5
 C_PRODUCT   = 2
 C_DIVISOR   = 2.5
 C_POWER     = 3
-
+dfsdf
 class MathException():
     def __init__(self, data):
         self.data = data
