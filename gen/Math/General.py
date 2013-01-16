@@ -1,5 +1,5 @@
 # Contexts
-C_LINE      = -1
+C_LINE      = -2
 C_PARENTH     = 0
 C_SUM       = 1
 C_MINUS     = 1.5
