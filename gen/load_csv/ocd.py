@@ -19,5 +19,6 @@ def open_csv(name):
                                 data_[names[k]]+=[row[k]]
         return Bunch(data_)
 def open_csv_errors(name):
+	pass
 
                                 
