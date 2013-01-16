@@ -32,6 +32,10 @@ class MathObject:
         pass
     def derivate(self, var):
      	raise NotImplementedError() 
+    """
+	plug in some values, no ness. all, so the resulting term depends on less vars
+    """
+
     def reduce(self, vars):
 	pass
       
