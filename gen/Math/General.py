@@ -31,7 +31,7 @@ class MathObject:
     def dependsOn(self, var):
         pass
     def derivate(self, var):
-        pass
+     	raise NotImplementedError() 
 
       
       
