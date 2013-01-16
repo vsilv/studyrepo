@@ -2,8 +2,8 @@
 # x = open_csv("table1.csv")
 # now all the variables are stored in x
 import csv 
-from errorclass import *
-def open_csv(name):
+import errorclass
+def open_csv(name,errorfy=False):
         class Bunch(object):
           def __init__(self, adict):
             self.__dict__.update(adict)
@@ -15,9 +15,35 @@ def open_csv(name):
                         data_[k]=[]
                 for row in data:
                         for k in xrange(len(row)):
-                                data_[names[k]]+=[row[k]]
-        return Bunch(data_)
-def open_csv_errors(name):
-	pass
+                                try:
+                                        number=float(str(row[k]))
+                                        data_[names[k]]+=[number]
+                                except:
+                                        pass
+        if errorfy==False:
+                return Bunch(data_)
+        else:
+                result={}
+                variables=[]
+                errors=[]
+                for k in data_.keys():
+                        if k[0]!="S":
+                                variables+=[k]
+                        else:
+                                errors+=[k]
+                for k in variables:
+                        if "S"+k in errors:
+                                result[k]=errorclass.Errorclass(data_[k],data_["S"+k])
+                        else:
+                                result[k]=data_[k]
+                return Bunch(result)
+
+
+
+
+
+                                
+
+
 
                                 

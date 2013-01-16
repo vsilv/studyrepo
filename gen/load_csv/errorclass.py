@@ -1,8 +1,8 @@
 import numpy as np
 class Errorclass:
-        def __init__(self,x,Sx):
-                self.x=float(x)
-                self.Sx=float(Sx)
+        def __init__(self,x,Sx=0):
+                self.x=np.array(x)
+                self.Sx=np.array(Sx)
         # + 
         def __add__(self,other):
                 if isinstance(other,Errorclass):
