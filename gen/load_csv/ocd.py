@@ -2,7 +2,6 @@
 # x = open_csv("table1.csv")
 # now all the variables are stored in x
 import csv 
-import sympy as sy
 from errorclass import *
 def open_csv(name):
         class Bunch(object):
