@@ -3,8 +3,9 @@
 # now all the variables are stored in x
 import numpy as np
 import csv 
-from errorclass import *
-def open_csv(name):
+import errorclass as er
+import numpy as np
+def open_csv(name,errorfy=False):
         class Bunch(object):
           def __init__(self, adict):
             self.__dict__.update(adict)
@@ -16,9 +17,29 @@ def open_csv(name):
                         data_[k]=[]
                 for row in data:
                         for k in xrange(len(row)):
-                                data_[names[k]]+=[row[k]]
-        return Bunch(data_)
-def open_csv_errors(name):
-	pass
-
-                                
+                                try:
+                                        number=float(str(row[k]))
+                                        data_[names[k]]+=[number]
+                                except:
+                                        pass
+        if errorfy==False:
+                return Bunch(data_)
+        else:
+                result={}
+                variables=[]
+                errors=[]
+                for k in data_.keys():
+                        if k[0]!="S":
+                                variables+=[k]
+                        else:
+                                errors+=[k]
+                for k in variables:
+                        if k[-3::]!="std":
+                                if "S"+k in errors:
+                                        result[k]=er.Errorclass(data_[k],data_["S"+k])
+                                else:
+                                        result[k]=data_[k]
+                        else:
+                                ss=np.array(data_[k]).std()
+                                result[k]=er.Errorclass(data_[k],ss)
+                return Bunch(result)
