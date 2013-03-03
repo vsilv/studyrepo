@@ -1,17 +1,12 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.7.31)  3 MAR 2013 14:35
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2011.4.25)  3 MAR 2013 19:04
 entering extended mode
  %&-line parsing enabled.
 **layer.tex
 (./layer.tex
 LaTeX2e <2009/09/24>
 Babel <v3.8l> and hyphenation patterns for english, usenglishmax, dumylang, noh
-yphenation, farsi, arabic, croatian, bulgarian, ukrainian, russian, czech, slov
-ak, danish, dutch, finnish, french, basque, ngerman, german, german-x-2009-06-1
-9, ngerman-x-2009-06-19, ibycus, monogreek, greek, ancientgreek, hungarian, san
-skrit, italian, latin, latvian, lithuanian, mongolian2a, mongolian, bokmal, nyn
-orsk, romanian, irish, coptic, serbian, turkish, welsh, esperanto, uppersorbian
-, estonian, indonesian, interlingua, icelandic, kurmanji, slovenian, polish, po
-rtuguese, spanish, galician, catalan, swedish, ukenglish, pinyin, loaded.
+yphenation, ngerman, german, german-x-2009-06-19, ngerman-x-2009-06-19, loaded.
+
 (/usr/share/texmf-texlive/tex/latex/base/article.cls
 Document Class: article 2007/10/19 v1.4h Standard LaTeX document class
 (/usr/share/texmf-texlive/tex/latex/base/size12.clo
@@ -37,7 +32,7 @@ Package: inputenc 2008/03/30 v1.1d Input encoding file
 (/usr/share/texmf-texlive/tex/latex/base/latin1.def
 File: latin1.def 2008/03/30 v1.1d Input encoding file
 ))
-(/var/lib/texmf/tex/generic/babel/babel.sty
+(/usr/share/texmf-texlive/tex/generic/babel/babel.sty
 Package: babel 2008/07/06 v3.8l The Babel package
 
 (/usr/share/texmf-texlive/tex/generic/babel/ngermanb.ldf
@@ -126,23 +121,6 @@ Package: latexsym 1998/08/17 v2.2e Standard LaTeX package (lasy symbols)
 LaTeX Font Info:    Overwriting symbol font `lasy' in version `bold'
 (Font)                  U/lasy/m/n --> U/lasy/b/n on input line 47.
 )
-(/usr/share/texmf-texlive/tex/latex/algorithms/algorithmic.sty
-Package: algorithmic 2009/08/24 v0.1 Document Style `algorithmic'
-
-(/usr/share/texmf-texlive/tex/latex/base/ifthen.sty
-Package: ifthen 2001/05/26 v1.1c Standard LaTeX ifthen package (DPC)
-)
-(/usr/share/texmf-texlive/tex/latex/graphics/keyval.sty
-Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
-\KV@toks@=\toks22
-)
-\c@ALC@unique=\count100
-\c@ALC@line=\count101
-\c@ALC@rem=\count102
-\c@ALC@depth=\count103
-\ALC@tlm=\skip46
-\algorithmicindent=\skip47
-)
 (/usr/share/texmf-texlive/tex/latex/base/textcomp.sty
 Package: textcomp 2005/09/27 v1.99g Standard LaTeX package
 Package textcomp Info: Sub-encoding information:
@@ -229,6 +207,10 @@ LaTeX Info: Redefining \bm on input line 204.
 (/usr/share/texmf-texlive/tex/latex/hyperref/hyperref.sty
 Package: hyperref 2009/10/09 v6.79a Hypertext links for LaTeX
 
+(/usr/share/texmf-texlive/tex/latex/graphics/keyval.sty
+Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
+\KV@toks@=\toks22
+)
 (/usr/share/texmf-texlive/tex/generic/oberdiek/ifpdf.sty
 Package: ifpdf 2009/04/10 v2.0 Provides the ifpdf switch (HO)
 Package ifpdf Info: pdfTeX in pdf mode detected.
@@ -248,8 +230,8 @@ O)
 Package: xcolor-patch 2009/10/02 xcolor patch
 ))
 \@linkdim=\dimen113
-\Hy@linkcounter=\count104
-\Hy@pagecounter=\count105
+\Hy@linkcounter=\count100
+\Hy@pagecounter=\count101
 
 (/usr/share/texmf-texlive/tex/latex/hyperref/pd1enc.def
 File: pd1enc.def 2009/10/09 v6.79a Hyperref: PDFDocEncoding definition (HO)
@@ -314,7 +296,7 @@ Package pdftexcmds Info: LuaTeX not detected.
 Package pdftexcmds Info: \pdf@primitive is available.
 Package pdftexcmds Info: \pdf@ifprimitive is available.
 )))
-\Fld@menulength=\count106
+\Fld@menulength=\count102
 \Field@Width=\dimen114
 \Fld@charsize=\dimen115
 \Field@toks=\toks23
@@ -329,14 +311,14 @@ Package hyperref Info: PDF/A mode OFF on input line 4407.
 (/usr/share/texmf-texlive/tex/generic/oberdiek/atbegshi.sty
 Package: atbegshi 2008/07/31 v1.9 At begin shipout hook (HO)
 )
-\Hy@abspage=\count107
-\c@Item=\count108
-\c@Hfootnote=\count109
+\Hy@abspage=\count103
+\c@Item=\count104
+\c@Hfootnote=\count105
 )
 *hyperref using default driver hpdftex*
 (/usr/share/texmf-texlive/tex/latex/hyperref/hpdftex.def
 File: hpdftex.def 2009/10/09 v6.79a Hyperref driver for pdfTeX
-\Fld@listcount=\count110
+\Fld@listcount=\count106
 )
 (/usr/share/texmf-texlive/tex/latex/graphics/graphics.sty
 Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
@@ -350,13 +332,13 @@ File: graphics.cfg 2009/08/28 v1.8 graphics configuration of TeX Live
 Package graphics Info: Driver file: pdftex.def on input line 91.
 
 (/usr/share/texmf-texlive/tex/latex/pdftex-def/pdftex.def
-File: pdftex.def 2010/03/12 v0.04p Graphics/color for pdfTeX
-\Gread@gobject=\count111
+File: pdftex.def 2009/08/25 v0.04m Graphics/color for pdfTeX
+\Gread@gobject=\count107
 ))
 (/usr/share/texmf-texlive/tex/latex/psfrag/psfrag.sty
 Package: psfrag 1998/04/11 v3.04 PSfrag (MCG)
-\pfg@pcount=\count112
-\pfg@scount=\count113
+\pfg@pcount=\count108
+\pfg@scount=\count109
 \pfg@temp=\write3
 )
 (/usr/share/texmf-texlive/tex/latex/caption/caption.sty
@@ -371,7 +353,7 @@ Package: caption3 2009/10/09 v3.1k caption3 kernel (AR)
 \caption@parindent=\dimen120
 \caption@hangindent=\dimen121
 )
-\c@ContinuedFloat=\count114
+\c@ContinuedFloat=\count110
 Package caption Info: hyperref package is loaded.
 )
 (/usr/share/texmf-texlive/tex/latex/graphics/graphicx.sty
@@ -386,9 +368,13 @@ Package: epsfig 1999/02/16 v1.7a (e)psfig emulation (SPQR)
 )
 (/usr/share/texmf-texlive/tex/latex/rotating/rotating.sty
 Package: rotating 2009/03/28 v2.16a rotated objects in LaTeX
-\c@r@tfl@t=\count115
-\rotFPtop=\skip48
-\rotFPbot=\skip49
+
+(/usr/share/texmf-texlive/tex/latex/base/ifthen.sty
+Package: ifthen 2001/05/26 v1.1c Standard LaTeX ifthen package (DPC)
+)
+\c@r@tfl@t=\count111
+\rotFPtop=\skip46
+\rotFPbot=\skip47
 \rot@float@box=\box28
 \rot@mess@toks=\toks24
 )
@@ -413,12 +399,12 @@ Package: pstricks 2008/11/26 v0.40 LaTeX wrapper for `PSTricks' (RN,HV)
 \pst@dimh=\dimen131
 \pst@hbox=\box29
 \pst@boxg=\box30
-\pst@cnta=\count116
-\pst@cntb=\count117
-\pst@cntc=\count118
-\pst@cntd=\count119
-\pst@cntg=\count120
-\pst@cnth=\count121
+\pst@cnta=\count112
+\pst@cntb=\count113
+\pst@cntc=\count114
+\pst@cntd=\count115
+\pst@cntg=\count116
+\pst@cnth=\count117
 \pst@toks=\toks25
 (/usr/share/texmf-texlive/tex/generic/pstricks/pstricks.con)
 \psunit=\dimen132
@@ -470,7 +456,7 @@ Package: xkeyval 2008/08/13 v2.6a package option processing (HA)
 (/usr/share/texmf-texlive/tex/generic/xkeyval/xkeyval.tex
 \XKV@toks=\toks28
 \XKV@tempa@toks=\toks29
-\XKV@depth=\count122
+\XKV@depth=\count118
 File: xkeyval.tex 2008/08/13 v2.6a key=value parser (HA)
 )))
 `pst-grad' v1.06, 2006/11/27 (tvz,dg,hv))
@@ -482,17 +468,17 @@ Package: pst-plot 2004/07/15 package wrapper for pst-plot.tex
 (/usr/share/texmf-texlive/tex/generic/pstricks/pst-plot.tex
 (/usr/share/texmf-texlive/tex/generic/multido/multido.tex
  v1.41, 2004/05/18 <tvz>
-\multido@count=\count123
-\multidocount=\count124
+\multido@count=\count119
+\multidocount=\count120
 \multido@stuff=\toks30
 )  v1.04, 2009/06/08)
 File: pst-plot.tex 2009/06/08 1.04 `pst-plot' (tvz)
 )
 (/usr/share/texmf-texlive/tex/latex/geometry/geometry.sty
 Package: geometry 2008/12/21 v4.2 Page Geometry
-\Gm@cnth=\count125
-\Gm@cntv=\count126
-\c@Gm@tempcnt=\count127
+\Gm@cnth=\count121
+\Gm@cntv=\count122
+\c@Gm@tempcnt=\count123
 \Gm@bindingoffset=\dimen140
 \Gm@wd@mp=\dimen141
 \Gm@odd@mp=\dimen142
@@ -531,7 +517,7 @@ Package: nameref 2007/05/29 v2.31 Cross-referencing by name of section
 (/usr/share/texmf-texlive/tex/latex/oberdiek/refcount.sty
 Package: refcount 2008/08/11 v3.1 Data extraction from references (HO)
 )
-\c@section@level=\count128
+\c@section@level=\count124
 )
 LaTeX Info: Redefining \ref on input line 31.
 LaTeX Info: Redefining \pageref on input line 31.
@@ -541,17 +527,17 @@ LaTeX Info: Redefining \pageref on input line 31.
 \openout4 = `layer.out'.
 
 \AtBeginShipoutBox=\box32
- (/usr/share/texmf-texlive/tex/context/base/supp-pdf.mkii
+ (/usr/share/texmf/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count129
+\scratchcounter=\count125
 \scratchdimen=\dimen144
 \scratchbox=\box33
-\nofMPsegments=\count130
-\nofMParguments=\count131
+\nofMPsegments=\count126
+\nofMParguments=\count127
 \everyMPshowfont=\toks32
-\MPscratchCnt=\count132
+\MPscratchCnt=\count128
 \MPscratchDim=\dimen145
-\MPnumerator=\count133
+\MPnumerator=\count129
 \everyMPtoPDFconversion=\toks33
 )
 Package caption Info: Begin \AtBeginDocument code.
@@ -600,25 +586,55 @@ driver: pdftex
 (1in=72.27pt, 1cm=28.45pt)
 -----------------------
 (./inner.tex
-LaTeX Font Info:    Try loading font information for U+msa on input line 2.
+LaTeX Font Info:    Try loading font information for U+msa on input line 1.
  (/usr/share/texmf-texlive/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2009/06/22 v3.00 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 2.
+LaTeX Font Info:    Try loading font information for U+msb on input line 1.
 
 (/usr/share/texmf-texlive/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2009/06/22 v3.00 AMS symbols B
 )
-LaTeX Font Info:    Try loading font information for U+lasy on input line 2.
+LaTeX Font Info:    Try loading font information for U+lasy on input line 1.
 
 (/usr/share/texmf-texlive/tex/latex/base/ulasy.fd
 File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
 )
 LaTeX Font Info:    Font shape `U/lasy/b/n' in size <8> not available
-(Font)              Font shape `U/lasy/m/n' tried instead on input line 2.
+(Font)              Font shape `U/lasy/m/n' tried instead on input line 1.
 LaTeX Font Info:    Font shape `U/lasy/b/n' in size <6> not available
-(Font)              Font shape `U/lasy/m/n' tried instead on input line 2.
-) [1
+(Font)              Font shape `U/lasy/m/n' tried instead on input line 1.
+)
+Overfull \hbox (518.07599pt too wide) in paragraph at lines 1--33
+\T1/cmr/m/n/12 Sf = $[]$ 
+ []
+
+
+Overfull \hbox (139.94756pt too wide) in paragraph at lines 1--33
+\T1/cmr/m/n/12 Sbeta = $[]$ 
+ []
+
+
+Overfull \hbox (518.07599pt too wide) in paragraph at lines 1--33
+\T1/cmr/m/n/12 Sf = $[]$ 
+ []
+
+
+Overfull \hbox (139.94756pt too wide) in paragraph at lines 1--33
+\T1/cmr/m/n/12 Sbeta = $[]$ 
+ []
+
+
+Overfull \hbox (518.07599pt too wide) in paragraph at lines 1--33
+\T1/cmr/m/n/12 Sf = $[]$ 
+ []
+
+
+Overfull \hbox (139.94756pt too wide) in paragraph at lines 1--33
+\T1/cmr/m/n/12 Sbeta = $[]$ 
+ []
+
+[1
 Non-PDF special ignored!
 Non-PDF special ignored!
 Non-PDF special ignored!
@@ -626,20 +642,27 @@ Non-PDF special ignored!
 Non-PDF special ignored!
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
-(./layer.aux) ) 
+[2] [3] (./layer.aux) ) 
 Here is how much of TeX's memory you used:
- 9513 strings out of 493848
- 132505 string characters out of 1152823
- 260407 words of memory out of 3000000
- 12586 multiletter control sequences out of 15000+50000
+ 9404 strings out of 495021
+ 131097 string characters out of 1181035
+ 274587 words of memory out of 3000000
+ 12396 multiletter control sequences out of 15000+50000
  12242 words of font info for 46 fonts, out of 3000000 for 9000
- 714 hyphenation exceptions out of 8191
- 38i,6n,52p,271b,316s stack positions out of 5000i,500n,10000p,200000b,50000s
-{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-t1.enc}</usr
-/share/texmf/fonts/type1/public/cm-super/sfrm1200.pfb>
-Output written on layer.pdf (1 page, 19906 bytes).
+ 28 hyphenation exceptions out of 8191
+ 38i,6n,52p,958b,316s stack positions out of 5000i,500n,10000p,200000b,50000s
+ </home/vk27/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm
+1200.600pk></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmex10.pfb>
+</usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share
+/texmf-texlive/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texmf-texli
+ve/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texmf-texlive/fonts/typ
+e1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-texlive/fonts/type1/public/am
+sfonts/cm/cmr6.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr
+8.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr
+/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
+Output written on layer.pdf (3 pages, 101782 bytes).
 PDF statistics:
- 16 PDF objects out of 1000 (max. 8388607)
- 2 named destinations out of 1000 (max. 500000)
+ 98 PDF objects out of 1000 (max. 8388607)
+ 4 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
