@@ -1,0 +1,7 @@
+[global]
+Gesamtdauer=500,000000
+Messungen=1
+Echtzeit=0,500000
+Messzeit=0,500000
+Messpunkte=1000
+Name=23-messung2-Verlauf
