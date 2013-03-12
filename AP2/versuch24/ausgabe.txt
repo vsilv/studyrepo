@@ -1,0 +1,11 @@
+Mittelwert: 26.732
+Varianz: 24.269 Poisson: 26.732
+Standardabweichung: 4.926 Poisson: 5.170
+Standardabweichung des Mittelwerts: 0.210 Poisson: 0.220
+Gesamtanzahl der Ereignisse: 14756.0
+mittlere Zaehlrate: 17.821 1/s
+Standardabweichung der Zaehlrate: 3.284 1/s
+Standardabweichung der mittleren Zaehlrate: 0.140 1/s
+Schiefe: 0.235 Poisson: 0.193
+Kurtosis: -0.111 Poisson: 0.037
+

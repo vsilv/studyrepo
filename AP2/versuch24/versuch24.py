@@ -1,71 +1,132 @@
+# -*- coding: utf-8 -*-
 import ocd
 import sympy as sy
 import matplotlib.pyplot as plt
 import matplotlib.mlab as mlab
 import numpy as np
 import scipy as sc
-def plot_messung1():
-	messung1=ocd.open_csv("messung1.csv")
-	n=messung1[0].x.magnitude
-	t=messung1[1].x.magnitude
+def get_distance(f):
+        poisson= lambda k,mu: 1./(sc.factorial(k)*np.exp(mu))*mu**k
+        normal_k= lambda k,mu: 1./np.sqrt(2*np.pi*mu)*np.exp(-(k-mu)**2/(2*mu))
+        mu_=np.arange(1,100+1,1)
+        vals=np.zeros([100])
+        for k in xrange(len(mu_)):
+                mu=mu_[k]
+                x=abs(poisson(0,mu)-normal_k(0,mu))
+                xlim=x*10**(-f)
+                s=0
+                n=0
+                while x>xlim:
+                        n+=1
+                        x=abs(poisson(n,mu)-normal_k(n,mu))
+                        s+=x
+                vals[k]=s
+        plt.plot(mu_,vals)
+def get_max_distance():
+        poisson= lambda k,mu: 1./(sc.factorial(k)*np.exp(mu))*mu**k
+        normal_k= lambda k,mu: 1./np.sqrt(2*np.pi*mu)*np.exp(-(k-mu)**2/(2*mu))
+        mu_=np.arange(1,100+1,1)
+        vals=np.zeros([100])
+        for k in xrange(len(mu_)):
+                mu=mu_[k]
+                x=abs(poisson(0,mu)-normal_k(0,mu))
+                xlim=x*10**(-3)
+                s=0
+                n=0
+                while x>xlim:
+                        n+=1
+                        x=abs(poisson(n,mu)-normal_k(n,mu))
+                        s=max(s,x)
+                vals[k]=s
+        plt.plot(mu_,vals)
 
+
+def plot_messung(n,t,b_len,y_lim,lens):
 	mu,sigma=np.mean(n),np.std(n)
-	fig= plt.figure()
+        print "Mittelwert: %.3f"%mu
+        print "Varianz: %.3f Poisson: %.3f"%(sigma**2,mu)
+        print "Standardabweichung: %.3f Poisson: %.3f"%(sigma,np.sqrt(mu))
+        print "Standardabweichung des Mittelwerts: %.3f Poisson: %.3f"%(sigma/np.sqrt(len(n)),np.sqrt(mu)/np.sqrt(len(n)))
+        print "Gesamtanzahl der Ereignisse:",np.sum(n)
+        print "mittlere Zaehlrate: %.3f 1/s"%(np.mean(n)/(1.5))
+        print "Standardabweichung der Zaehlrate: %.3f 1/s"%(np.std(n)/1.5)
+        print "Standardabweichung der mittleren Zaehlrate: %.3f 1/s"%(np.std(n)/1.5/np.sqrt(len(n)))
+        print "Schiefe: %.3f Poisson: %.3f"%(np.mean((n-n.mean())**3)/sigma**3,1/np.sqrt(mu))
+        print "Kurtosis: %.3f Poisson: %.3f"%(np.mean((n-n.mean())**4)/sigma**4-3,1/(mu))
+        print ""
+        fig=plt.figure(figsize=(16,12))
 	ax = fig.add_subplot(111)
 
 	# the histogram of the data
-	n, bins, patches = ax.hist(n, 32, normed=1, facecolor='yellow', alpha=0.75)
-
-
-	b=np.linspace(0,50,1000)
-	b2=np.arange(0,50,1)+0.5
-
-	# add a 'best fit' line for the normal PDF
-	poisson= lambda k: 1./(sc.factorial(k)*np.exp(mu))*mu**k
-	y = mlab.normpdf( b, mu, sigma)
-	y2 =mlab.normpdf( b2, mu, sigma)
-	l = ax.plot(b, y, 'b--', linewidth=1)
-	p = ax.plot(b, poisson(b), 'b--', linewidth=1)
-	l = ax.scatter(b2, y2,marker="x" ,c="b")
-	p = ax.scatter(b2, poisson(b2) ,marker="x" ,c="b")
-	ax.set_xlabel('Anzahl der Impulse')
-	ax.set_ylabel('Wahrscheinlichkeit')
-	ax.grid(True)
-	plt.ylim(0,0.09)
-	plt.xlim(10,50)
-	plt.show()
-def plot_messung2():
-	messung2=ocd.open_csv("messung2.csv")
-	n=messung2[1].x.magnitude
-	t=messung2[0].x.magnitude
-
-	mu,sigma=np.mean(n),np.std(n)
-	fig= plt.figure()
-	ax = fig.add_subplot(111)
-
-	# the histogram of the data
-	n, bins, patches = ax.hist(n, 13, normed=1, facecolor='yellow', alpha=0.75)
+	n, bins, patches = ax.hist(n, lens, normed=1, facecolor='yellow', alpha=0.75)
 
 
 	bincenters = 0.5*(bins[1:]+bins[:-1])
-	b=np.linspace(0,13,1000)
-	b2=np.arange(0,13,1)+0.5
+	b=np.linspace(0,b_len,1000)
+	b2=np.arange(0,b_len,1)+0.5
 
 	# add a 'best fit' line for the normal PDF
-	poisson= lambda k: 1./(sc.factorial(k)*np.exp(mu))*mu**k
-	y = mlab.normpdf( b, mu, sigma)
-	y2 =mlab.normpdf( b2, mu, sigma)
-	l = ax.plot(b, y, 'b--', linewidth=1)
+		#y = mlab.normpdf( b, mu, sigma)
+	#y2 =mlab.normpdf( b2, mu, sigma)
+	#l = ax.plot(b, y, 'b--', linewidth=1)
+        poisson= lambda k: 1./(sc.factorial(k)*np.exp(mu))*mu**k
+        normal_k= lambda k: 1./np.sqrt(2*np.pi*mu)*np.exp(-(k-mu)**2/(2*mu))
+
+
+	nk= ax.plot(b, normal_k(b), 'g--', linewidth=1)
 	p = ax.plot(b, poisson(b), 'r--', linewidth=1)
-	l = ax.scatter(b2, y2,marker="x" ,c="b")
+	l = ax.scatter(b2, normal_k(b2),marker="x" ,c="b")
 	p = ax.scatter(b2, poisson(b2) ,marker="x" ,c="b")
 
 
 	ax.set_xlabel('Anzahl der Impulse')
 	ax.set_ylabel('Wahrscheinlichkeit')
-	plt.xlim(0,13)
-	plt.ylim(0,0.2)
+	plt.xlim(0,b_len)
+	plt.ylim(0,y_lim)
 	ax.grid(True)
 
 	plt.show()
-plot_messung2()
+def plot_messung3():
+	mu,sigma=0.531335,0.721217
+        print "Mittelwert: 0.531"
+        print "Varianz: 0.520 Poisson: 0.531"
+        print "Standardabweichung: 0.721 Poisson: 0.729"
+        print "Standardabweichung des Mittelwerts: 0.022 Poisson: 0.022"
+        print "Gesamtanzahl der Ereignisse: 585"
+        print "mittlere Zaehlrate: 1.063 1/s"
+        print "Standardabweichung der Zaehlrate: 1.442 1/s"
+        print "Standardabweichung der mittleren Zaehlrate: 0.043 1/s"
+        print "Schiefe: %.3f Poisson: %.3f"%(1/np.sqrt(mu)*0.99,1/np.sqrt(mu))
+        print "Kurtosis: %.3f Poisson: %.3f"%(0.999/mu,1/(mu))
+        print ""
+
+        H=np.array([6.45*10**2,3.45*10**2,9.5*10,14,2])
+        fig=plt.figure(figsize=(16,12))
+        plt.scatter(np.arange(0,4+1,1),H/1101,marker="^",s=80)
+        poisson= lambda k: 1./(sc.factorial(k)*np.exp(mu))*mu**k
+        normal_k= lambda k: 1./np.sqrt(2*np.pi*mu)*np.exp(-(k-mu)**2/(2*mu))
+        b=np.linspace(0,5,100)
+        b2=np.arange(0,5,1)
+        plt.plot(b, normal_k(b), 'g--', linewidth=1)
+	plt.plot(b, poisson(b), 'r--', linewidth=1)
+	plt.scatter(b2, normal_k(b2),marker="x" ,c="b")
+	plt.scatter(b2, poisson(b2) ,marker="x" ,c="b")
+        plt.title("Messung 3")
+        plt.xlabel("Anzahl der Pulse")
+        plt.ylabel("Wahrscheinlichkeit")
+        plt.grid(True)
+        plt.xlim(0,5)
+        plt.ylim(0,0.7)
+        plt.show()
+
+messung1=ocd.open_csv("messung1.csv")
+n1=messung1[0].x.magnitude
+t1=messung1[1].x.magnitude
+plot_messung(n1,t1,50,0.1,32)
+       
+messung2=ocd.open_csv("messung2.csv")
+n2=messung2[1].x.magnitude
+t2=messung2[0].x.magnitude
+plot_messung(n2,t2,12,0.2,13)
+
+plot_messung3()
