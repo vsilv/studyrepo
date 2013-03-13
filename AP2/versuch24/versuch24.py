@@ -87,20 +87,23 @@ def plot_messung(n,t,b_len,y_lim,lens):
 
 	plt.show()
 def plot_messung3():
-	mu,sigma=0.531335,0.721217
-        print "Mittelwert: 0.531"
-        print "Varianz: 0.520 Poisson: 0.531"
-        print "Standardabweichung: 0.721 Poisson: 0.729"
-        print "Standardabweichung des Mittelwerts: 0.022 Poisson: 0.022"
-        print "Gesamtanzahl der Ereignisse: 585"
-        print "mittlere Zaehlrate: 1.063 1/s"
-        print "Standardabweichung der Zaehlrate: 1.442 1/s"
-        print "Standardabweichung der mittleren Zaehlrate: 0.043 1/s"
-        print "Schiefe: %.3f Poisson: %.3f"%(1/np.sqrt(mu)*0.99,1/np.sqrt(mu))
-        print "Kurtosis: %.3f Poisson: %.3f"%(0.999/mu,1/(mu))
+        H=np.array([6.45*10**2,3.45*10**2,9.5*10,14,2])	
+	mu=np.sum(H*np.arange(0,5,1))/np.sum(H)
+	n=np.arange(0,5,1)
+	sigma=np.sqrt((np.sum(H*(np.arange(0,5,1)-mu)**2)/(np.sum(H)-1)))
+        print "Mittelwert: %.3f"%mu
+        print "Varianz: %.3f Poisson: %.3f"%(sigma**2,mu)
+        print "Standardabweichung: %.3f Poisson: %.3f"%(sigma,np.sqrt(mu))
+        print "Standardabweichung des Mittelwerts: %.3f Poisson: %.3f"%(sigma/np.sqrt(len(n)),np.sqrt(mu)/np.sqrt(len(n)))
+        print "Gesamtanzahl der Ereignisse:",np.sum(H)
+        print "mittlere Zaehlrate: %.3f 1/s"%(mu/(1.5))
+        print "Standardabweichung der Zaehlrate: %.3f 1/s"%(sigma/1.5)
+        print "Standardabweichung der mittleren Zaehlrate: %.3f 1/s"%(sigma/1.5/np.sqrt(len(H)))
+        print "Schiefe: %.3f Poisson: %.3f"%(np.mean(H*(n-mu)**3)/sigma**3,1/np.sqrt(mu))
+        print "Kurtosis: %.3f Poisson: %.3f"%(np.mean(H*(n-mu)**4)/sigma**4-3,1/(mu))
+
         print ""
 
-        H=np.array([6.45*10**2,3.45*10**2,9.5*10,14,2])
         fig=plt.figure(figsize=(16,12))
         plt.scatter(np.arange(0,4+1,1),H/1101,marker="^",s=80)
         poisson= lambda k: 1./(sc.factorial(k)*np.exp(mu))*mu**k
@@ -122,11 +125,11 @@ def plot_messung3():
 messung1=ocd.open_csv("messung1.csv")
 n1=messung1[0].x.magnitude
 t1=messung1[1].x.magnitude
-plot_messung(n1,t1,50,0.1,32)
+#plot_messung(n1,t1,50,0.1,32)
        
 messung2=ocd.open_csv("messung2.csv")
 n2=messung2[1].x.magnitude
 t2=messung2[0].x.magnitude
-plot_messung(n2,t2,12,0.2,13)
+#plot_messung(n2,t2,12,0.2,13)
 
 plot_messung3()
