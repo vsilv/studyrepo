@@ -41,16 +41,16 @@ def get_max_distance():
         plt.plot(mu_,vals)
 
 
-def plot_messung(n,t,b_len,y_lim,lens):
+def plot_messung(n,t,b_len,y_lim,lens,rate):
 	mu,sigma=np.mean(n),np.std(n)
         print "Mittelwert: %.3f"%mu
         print "Varianz: %.3f Poisson: %.3f"%(sigma**2,mu)
         print "Standardabweichung: %.3f Poisson: %.3f"%(sigma,np.sqrt(mu))
         print "Standardabweichung des Mittelwerts: %.3f Poisson: %.3f"%(sigma/np.sqrt(len(n)),np.sqrt(mu)/np.sqrt(len(n)))
         print "Gesamtanzahl der Ereignisse:",np.sum(n)
-        print "mittlere Zaehlrate: %.3f 1/s"%(np.mean(n)/(1.5))
-        print "Standardabweichung der Zaehlrate: %.3f 1/s"%(np.std(n)/1.5)
-        print "Standardabweichung der mittleren Zaehlrate: %.3f 1/s"%(np.std(n)/1.5/np.sqrt(len(n)))
+        print "mittlere Zaehlrate: %.3f 1/s"%(np.mean(n)/(rate))
+        print "Standardabweichung der Zaehlrate: %.3f 1/s"%(np.std(n)/rate)
+        print "Standardabweichung der mittleren Zaehlrate: %.3f 1/s"%(np.std(n)/rate/np.sqrt(len(n)))
         print "Schiefe: %.3f Poisson: %.3f"%(np.mean((n-n.mean())**3)/sigma**3,1/np.sqrt(mu))
         print "Kurtosis: %.3f Poisson: %.3f"%(np.mean((n-n.mean())**4)/sigma**4-3,1/(mu))
         print ""
@@ -94,13 +94,13 @@ def plot_messung3():
         print "Mittelwert: %.3f"%mu
         print "Varianz: %.3f Poisson: %.3f"%(sigma**2,mu)
         print "Standardabweichung: %.3f Poisson: %.3f"%(sigma,np.sqrt(mu))
-        print "Standardabweichung des Mittelwerts: %.3f Poisson: %.3f"%(sigma/np.sqrt(len(n)),np.sqrt(mu)/np.sqrt(len(n)))
-        print "Gesamtanzahl der Ereignisse:",np.sum(H)
-        print "mittlere Zaehlrate: %.3f 1/s"%(mu/(1.5))
-        print "Standardabweichung der Zaehlrate: %.3f 1/s"%(sigma/1.5)
-        print "Standardabweichung der mittleren Zaehlrate: %.3f 1/s"%(sigma/1.5/np.sqrt(len(H)))
-        print "Schiefe: %.3f Poisson: %.3f"%(np.mean(H*(n-mu)**3)/sigma**3,1/np.sqrt(mu))
-        print "Kurtosis: %.3f Poisson: %.3f"%(np.mean(H*(n-mu)**4)/sigma**4-3,1/(mu))
+        print "Standardabweichung des Mittelwerts: %.3f Poisson: %.3f"%(sigma/np.sqrt(np.sum(H)),np.sqrt(mu)/np.sqrt(np.sum(H)))
+        print "Gesamtanzahl der Ereignisse:",np.sum(H*n)
+        print "mittlere Zaehlrate: %.3f 1/s"%(mu/(0.5))
+        print "Standardabweichung der Zaehlrate: %.3f 1/s"%(sigma/0.5)
+        print "Standardabweichung der mittleren Zaehlrate: %.3f 1/s"%(sigma/0.5/np.sqrt(np.sum(H)))
+        print "Schiefe: %.3f Poisson: %.3f"%((np.sum(H*(n-mu)**3)/np.sum(H))/sigma**3,1/np.sqrt(mu))
+        print "Kurtosis: %.3f Poisson: %.3f"%((np.sum(H*(n-mu)**4)/np.sum(H))/sigma**4-3,1/(mu))
 
         print ""
 
@@ -125,11 +125,11 @@ def plot_messung3():
 messung1=ocd.open_csv("messung1.csv")
 n1=messung1[0].x.magnitude
 t1=messung1[1].x.magnitude
-#plot_messung(n1,t1,50,0.1,32)
+plot_messung(n1,t1,50,0.1,32,1.5)
        
 messung2=ocd.open_csv("messung2.csv")
 n2=messung2[1].x.magnitude
 t2=messung2[0].x.magnitude
-#plot_messung(n2,t2,12,0.2,13)
+plot_messung(n2,t2,12,0.2,13,0.5)
 
 plot_messung3()

@@ -9,3 +9,39 @@ Standardabweichung der mittleren Zaehlrate: 0.140 1/s
 Schiefe: 0.235 Poisson: 0.193
 Kurtosis: -0.111 Poisson: 0.037
 
+Mittelwert: 5.058
+Varianz: 4.811 Poisson: 5.058
+Standardabweichung: 2.193 Poisson: 2.249
+Standardabweichung des Mittelwerts: 0.069 Poisson: 0.071
+Gesamtanzahl der Ereignisse: 5058.0
+mittlere Zaehlrate: 10.116 1/s
+Standardabweichung der Zaehlrate: 4.387 1/s
+Standardabweichung der mittleren Zaehlrate: 0.139 1/s
+Schiefe: 0.523 Poisson: 0.445
+Kurtosis: 0.507 Poisson: 0.198
+
+Mittelwert: 0.531
+Varianz: 0.520 Poisson: 0.531
+Standardabweichung: 0.721 Poisson: 0.729
+Standardabweichung des Mittelwerts: 0.022 Poisson: 0.022
+Gesamtanzahl der Ereignisse: 585.0
+mittlere Zaehlrate: 1.063 1/s
+Standardabweichung der Zaehlrate: 1.442 1/s
+Standardabweichung der mittleren Zaehlrate: 0.043 1/s
+Schiefe: 1.292 Poisson: 1.372
+Kurtosis: 1.430 Poisson: 1.882
+
+pythonquellcode:
+
+mu,sigma=np.mean(n),np.std(n)
+print "Mittelwert: %.3f"%mu
+print "Varianz: %.3f Poisson: %.3f"%(sigma**2,mu)
+print "Standardabweichung: %.3f Poisson: %.3f"%(sigma,np.sqrt(mu))
+print "Standardabweichung des Mittelwerts: %.3f Poisson: %.3f"%(sigma/np.sqrt(len(n)),np.sqrt(mu)/np.sqrt(len(n)))
+print "Gesamtanzahl der Ereignisse:",np.sum(n)
+print "mittlere Zaehlrate: %.3f 1/s"%(np.mean(n)/(rate))
+print "Standardabweichung der Zaehlrate: %.3f 1/s"%(np.std(n)/rate)
+print "Standardabweichung der mittleren Zaehlrate: %.3f 1/s"%(np.std(n)/rate/np.sqrt(len(n)))
+print "Schiefe: %.3f Poisson: %.3f"%(np.mean((n-n.mean())**3)/sigma**3,1/np.sqrt(mu))
+print "Kurtosis: %.3f Poisson: %.3f"%(np.mean((n-n.mean())**4)/sigma**4-3,1/(mu))
+
