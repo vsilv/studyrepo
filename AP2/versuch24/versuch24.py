@@ -70,11 +70,19 @@ def plot_messung(n,t,b_len,y_lim,lens,rate):
 	#y2 =mlab.normpdf( b2, mu, sigma)
 	#l = ax.plot(b, y, 'b--', linewidth=1)
         poisson= lambda k: 1./(sc.factorial(k)*np.exp(mu))*mu**k
+        poisson2= lambda k: 1./(sc.factorial(k)*np.exp(mu+sigma))*(mu+sigma)**k
+        poisson3= lambda k: 1./(sc.factorial(k)*np.exp(mu-sigma))*(mu-sigma)**k
         normal_k= lambda k: 1./np.sqrt(2*np.pi*mu)*np.exp(-(k-mu)**2/(2*mu))
+        normal_k2= lambda k: 1./np.sqrt(2*np.pi*(mu+sigma))*np.exp(-(k-(mu+sigma))**2/(2*(mu+sigma)))
+        normal_k3= lambda k: 1./np.sqrt(2*np.pi*(mu-sigma))*np.exp(-(k-(mu-sigma))**2/(2*(mu-sigma)))
 
 
 	nk= ax.plot(b, normal_k(b), 'g--', linewidth=1)
+	nk= ax.plot(b, normal_k2(b), 'g--', linewidth=1)
+	nk= ax.plot(b, normal_k3(b), 'g--', linewidth=1)
 	p = ax.plot(b, poisson(b), 'r--', linewidth=1)
+	p = ax.plot(b, poisson2(b), 'r--', linewidth=1)
+	p = ax.plot(b, poisson3(b), 'r--', linewidth=1)
 	l = ax.scatter(b2, normal_k(b2),marker="x" ,c="b")
 	p = ax.scatter(b2, poisson(b2) ,marker="x" ,c="b")
 
