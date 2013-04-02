@@ -65,10 +65,28 @@ ue=-256./200
 Rs=ue**2*R
 phi1_theo=sy.atan(Rfe*Rs/(w*L*(Rs+Rfe)))
 phi1_theo_capa=sy.atan(Rfe/(w*L)*((L/Cs - (Rs**2 + 1. / (w**2*Cs**2)))/(Rfe*Rs+(Rs**2+1./(w**2*Cs**2)))))
+phi2_theo= sy.atan(1./(R*w*C))
 def plot1a():
         fig=plt.figure(figsize=(16,12))
         t1=ocd.plot_var(Ieff2,Ueff2/Ueff1,var,messung221,True)
         (a,b,Sa,Sb,Sy)=t1
+        textstr=ur"$a= (%.3f\pm %.3f)V$    $b= (%.3f\pm %.3f)\frac{V}{A}$"%(a,Sa,b,Sb)
+        print textstr
+        props = dict(boxstyle="round", facecolor="wheat", alpha=0.5)
+
+        #plt.xscale("log",nonpox="clip")
+        #plt.yscale("log",nonpox="clip")
+        plt.xlabel(ur"$I_{eff2}$ in A",fontsize=16)
+        plt.ylabel(ur"$\frac{Ueff2}{Ueff1}$",fontsize=16)
+        plt.title(ur"Spannungsverhältnis" )
+        plt.text(0.05, 0.95, textstr,  fontsize=14, verticalalignment="top", bbox=props)
+        plt.grid(True)
+        plt.show()
+def plot1a_kleine_stroeme():
+        fig=plt.figure(figsize=(16,12))
+        t1=ocd.plot_var(Ieff2,Ueff2/Ueff1,var,messung221,True,choices = np.arange(7,21,1))
+        (a,b,Sa,Sb,Sy)=t1
+
         textstr=ur"$a= (%.3f\pm %.3f)V$    $b= (%.3f\pm %.3f)\frac{V}{A}$"%(a,Sa,b,Sb)
         print textstr
         props = dict(boxstyle="round", facecolor="wheat", alpha=0.5)
@@ -142,6 +160,7 @@ def plot2c():
         fig=plt.figure(figsize=(16,12))
         t1=ocd.plot_var(Ieff2,phi1,var,messung222,False)
         t1=ocd.plot_var(Ieff2,phi1_theo_capa,var,messung222,False)
+        t1=ocd.plot_var(Ieff2,phi2_theo,var,messung222,False)
         #plt.xscale("log",nonpox="clip")
         #plt.yscale("log",nonpox="clip")
         plt.xlabel(ur"$I_{eff2}$ in A",fontsize=16)
@@ -150,7 +169,5 @@ def plot2c():
         plt.grid(True)
         plt.show()
 
-
-plot2a()
-plot2b()
 plot2c()
+
