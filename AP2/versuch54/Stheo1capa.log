@@ -1,0 +1,232 @@
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.7.31)  1 APR 2013 14:40
+entering extended mode
+ %&-line parsing enabled.
+**Stheo1capa.tex
+(./Stheo1capa.tex
+LaTeX2e <2009/09/24>
+Babel <v3.8l> and hyphenation patterns for english, usenglishmax, dumylang, noh
+yphenation, farsi, arabic, croatian, bulgarian, ukrainian, russian, czech, slov
+ak, danish, dutch, finnish, french, basque, ngerman, german, german-x-2009-06-1
+9, ngerman-x-2009-06-19, ibycus, monogreek, greek, ancientgreek, hungarian, san
+skrit, italian, latin, latvian, lithuanian, mongolian2a, mongolian, bokmal, nyn
+orsk, romanian, irish, coptic, serbian, turkish, welsh, esperanto, uppersorbian
+, estonian, indonesian, interlingua, icelandic, kurmanji, slovenian, polish, po
+rtuguese, spanish, galician, catalan, swedish, ukenglish, pinyin, loaded.
+(/usr/share/texmf-texlive/tex/latex/base/article.cls
+Document Class: article 2007/10/19 v1.4h Standard LaTeX document class
+(/usr/share/texmf-texlive/tex/latex/base/size10.clo
+File: size10.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@section=\count80
+\c@subsection=\count81
+\c@subsubsection=\count82
+\c@paragraph=\count83
+\c@subparagraph=\count84
+\c@figure=\count85
+\c@table=\count86
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+)
+(/usr/share/texmf-texlive/tex/latex/base/inputenc.sty
+Package: inputenc 2008/03/30 v1.1d Input encoding file
+\inpenc@prehook=\toks14
+\inpenc@posthook=\toks15
+
+(/usr/share/texmf-texlive/tex/latex/base/latin1.def
+File: latin1.def 2008/03/30 v1.1d Input encoding file
+))
+(/var/lib/texmf/tex/generic/babel/babel.sty
+Package: babel 2008/07/06 v3.8l The Babel package
+
+(/usr/share/texmf-texlive/tex/generic/babel/ngermanb.ldf
+Language: ngermanb 2008/07/06 v2.6n new German support from the babel system
+
+(/usr/share/texmf-texlive/tex/generic/babel/babel.def
+File: babel.def 2008/07/06 v3.8l Babel common definitions
+\babel@savecnt=\count87
+\U@D=\dimen103
+)
+\l@naustrian = a dialect from \language\l@ngerman 
+Package babel Info: Making " an active character on input line 92.
+))
+(/usr/share/texmf-texlive/tex/latex/psnfss/helvet.sty
+Package: helvet 2005/04/12 PSNFSS-v9.2a (WaS) 
+
+(/usr/share/texmf-texlive/tex/latex/graphics/keyval.sty
+Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
+\KV@toks@=\toks16
+))
+(/usr/share/texmf-texlive/tex/latex/mh/breqn.sty
+Package: breqn 2008/08/13 v0.98a
+
+(/usr/share/texmf-texlive/tex/latex/mh/flexisym.sty
+Package: flexisym 2008/07/23 v0.97
+LaTeX Info: Redefining \textprime on input line 178.
+LaTeX Info: Redefining \not on input line 235.
+
+(/usr/share/texmf-texlive/tex/latex/mh/cmbase.sym
+File: cmbase.sym 2007/12/19 v0.92
+LaTeX Info: Redefining \hbar on input line 321.
+LaTeX Info: Redefining \surd on input line 323.
+LaTeX Info: Redefining \angle on input line 331.
+LaTeX Info: Redefining \neq on input line 332.
+LaTeX Info: Redefining \mapsto on input line 333.
+LaTeX Info: Redefining \cong on input line 334.
+LaTeX Info: Redefining \notin on input line 337.
+LaTeX Info: Redefining \rightleftharpoons on input line 338.
+LaTeX Info: Redefining \doteq on input line 339.
+LaTeX Info: Redefining \hookrightarrow on input line 340.
+LaTeX Info: Redefining \hookleftarrow on input line 341.
+LaTeX Info: Redefining \bowtie on input line 342.
+LaTeX Info: Redefining \models on input line 343.
+LaTeX Info: Redefining \Longrightarrow on input line 344.
+LaTeX Info: Redefining \longrightarrow on input line 345.
+LaTeX Info: Redefining \Longleftarrow on input line 346.
+LaTeX Info: Redefining \longleftarrow on input line 347.
+LaTeX Info: Redefining \longmapsto on input line 348.
+LaTeX Info: Redefining \longleftrightarrow on input line 349.
+LaTeX Info: Redefining \Longleftrightarrow on input line 350.
+LaTeX Info: Redefining \cdots on input line 354.
+LaTeX Info: Redefining \vdots on input line 357.
+LaTeX Info: Redefining \ddots on input line 362.
+)
+(/usr/share/texmf-texlive/tex/latex/mh/mathstyle.sty
+Package: mathstyle 2008/07/23 v0.85
+LaTeX Info: Redefining \displaystyle on input line 76.
+LaTeX Info: Redefining \textstyle on input line 78.
+LaTeX Info: Redefining \scriptstyle on input line 80.
+LaTeX Info: Redefining \scriptscriptstyle on input line 82.
+))
+(/usr/share/texmf-texlive/tex/latex/tools/calc.sty
+Package: calc 2007/08/22 v4.3 Infix arithmetic (KKT,FJ)
+\calc@Acount=\count88
+\calc@Bcount=\count89
+\calc@Adimen=\dimen104
+\calc@Bdimen=\dimen105
+\calc@Askip=\skip43
+\calc@Bskip=\skip44
+LaTeX Info: Redefining \setlength on input line 76.
+LaTeX Info: Redefining \addtolength on input line 77.
+\calc@Ccount=\count90
+\calc@Cskip=\skip45
+)
+\@emptytoks=\toks17
+\inf@bad=\count91
+\maxint=\count92
+\listwidth=\dimen106
+\eqnumsep=\dimen107
+\eqmargin=\dimen108
+\eqlinespacing=\skip46
+\eqlineskip=\skip47
+\eqlineskiplimit=\dimen109
+\eqbinoffset=\muskip10
+\eqdelimoffset=\muskip11
+\eqindentstep=\dimen110
+\eqstyle=\toks18
+\eqbreakdepth=\count93
+\eqinterlinepenalty=\count94
+\intereqpenalty=\count95
+\intereqskip=\skip48
+\prerelpenalty=\count96
+\prebinoppenalty=\count97
+\Dmedmuskip=\muskip12
+\Dthickmuskip=\muskip13
+\eqleftskip=\skip49
+\eqrightskip=\skip50
+\eq@vspan=\skip51
+\eq@binoffset=\muskip14
+\EQ@box=\box26
+\EQ@copy=\box27
+\EQ@numbox=\box28
+\eq@wdNum=\dimen111
+\GRP@numbox=\box29
+\grp@wdNum=\dimen112
+\eq@lines=\count98
+\eq@curline=\count99
+\eq@badness=\count100
+\EQ@vims=\count101
+\eq@dp=\dimen113
+\eq@wdL=\dimen114
+\eq@wdT=\dimen115
+\eq@wdMin=\dimen116
+\grp@wdL=\dimen117
+\grp@wdR=\dimen118
+\grp@wdT=\dimen119
+\eq@wdRmax=\dimen120
+\eq@firstht=\dimen121
+\eq@wdCond=\dimen122
+\eq@indentstep=\dimen123
+\eq@linewidth=\dimen124
+\grp@linewidth=\dimen125
+\eq@hshift=\dimen126
+\eq@given@sidespace=\dimen127
+\mathindent=\dimen128
+\eq@final@linecount=\count102
+\eq@wdR=\dimen129
+\EQ@continue=\toks19
+\lr@level=\count103
+\GRP@queue=\toks20
+\c@parentequation=\count104
+\GRP@box=\box30
+\GRP@wholebox=\box31
+\darraycolsep=\skip52
+\cur@row=\count105
+\cur@col=\count106
+\conditionsep=\skip53
+)
+
+LaTeX Warning: Unused global option(s):
+    [4pt,a2paper].
+
+(./Stheo1capa.aux)
+\openout1 = `Stheo1capa.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 10.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 10.
+
+Overfull \hbox (1390.97098pt too wide) in paragraph at lines 13--13
+$[]|$
+ []
+
+[1
+
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] (./Stheo1capa.aux) ) 
+Here is how much of TeX's memory you used:
+ 1415 strings out of 493848
+ 16479 string characters out of 1152823
+ 98877 words of memory out of 3000000
+ 4732 multiletter control sequences out of 15000+50000
+ 3640 words of font info for 14 fonts, out of 3000000 for 9000
+ 714 hyphenation exceptions out of 8191
+ 33i,12n,33p,1974b,185s stack positions out of 5000i,500n,10000p,200000b,50000s
+</usr/
+share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf
+-texlive/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-texlive/fo
+nts/type1/public/amsfonts/cm/cmmi5.pfb></usr/share/texmf-texlive/fonts/type1/pu
+blic/amsfonts/cm/cmmi7.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfont
+s/cm/cmr10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr5.pf
+b></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share
+/texmf-texlive/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-texl
+ive/fonts/type1/public/amsfonts/cm/cmsy7.pfb>
+Output written on Stheo1capa.pdf (1 page, 79423 bytes).
+PDF statistics:
+ 42 PDF objects out of 1000 (max. 8388607)
+ 0 named destinations out of 1000 (max. 500000)
+ 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+
