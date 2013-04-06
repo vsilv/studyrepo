@@ -36,12 +36,21 @@ def plot_sekundaer():
         plt.ylabel(ur"U in V")
         plt.grid(True)
         plt.show()
+<<<<<<< HEAD
+=======
+        
+plot_sekundaer()
+
+
+
+>>>>>>> b9dee791187f2e45caf5604496a8606185957703
 ################## Kennlinien
 R = sy.Symbol("R")
 Ieff1 = sy.Symbol("Ieff1")
 Ieff2 = sy.Symbol("Ieff2")
 Ueff1 = sy.Symbol("Ueff1")
 Ueff2 = sy.Symbol("Ueff2")
+<<<<<<< HEAD
 w_=ocd.Groesse("w","rad/s",np.array([2*np.pi*50]),np.array([1]))
 w=sy.Symbol("w")
 L_=ocd.Groesse("L","H",np.array([1.37]),np.array([0.03]))
@@ -97,10 +106,24 @@ def plot1a_kleine_stroeme():
         plt.ylabel(ur"$\frac{Ueff2}{Ueff1}$",fontsize=16)
         plt.title(ur"Spannungsverhältnis" )
         plt.text(0.05, 0.95, textstr,  fontsize=14, verticalalignment="top", bbox=props)
+=======
+P = sy.Symbol("P")
+var = [R, Ieff1,Ieff2,Ueff1,Ueff2,P]
+messung221=ocd.open_csv("221.csv")
+def plot1a():
+        fig=plt.figure(figsize=(16,12))
+        t1=ocd.plot_var(Ieff2,Ueff2/Ueff1,var,messung221,True)
+        #plt.xscale("log",nonpox="clip")
+        #plt.yscale("log",nonpox="clip")
+        plt.xlabel(ur"$I_eff2$")
+        plt.ylabel(ur"$\frac{Ueff2}{Ueff1}$")
+        plt.title(ur"Spannungsverhältnis $\frac{Ueff2}{Ueff1}$")
+>>>>>>> b9dee791187f2e45caf5604496a8606185957703
         plt.grid(True)
         plt.show()
 def plot1b():
         fig=plt.figure(figsize=(16,12))
+<<<<<<< HEAD
         t1=ocd.plot_var(Ieff2,Pw1,var,messung221,True)
         t1=ocd.plot_var(Ieff2,Pw2,var,messung221,True,2)
         #plt.xscale("log",nonpox="clip")
@@ -136,18 +159,60 @@ def plot1d():
 plot1d()
 
 ##################### 222
+=======
+        P2= Ueff2*Ieff2
+        t1=ocd.plot_var(Ieff2,P2,var,messung221,False)
+        #plt.xscale("log",nonpox="clip")
+        #plt.yscale("log",nonpox="clip")
+        plt.xlabel(ur"$I_eff2$")
+        plt.ylabel(ur"$P_{s,1}$")
+        plt.title("Sekundärsleistung")
+        plt.grid(True)
+        plt.show()
+def plot1c():
+        fig=plt.figure(figsize=(16,12))
+        P2= Ueff2*Ieff2
+        eta= P2 / P
+        t1=ocd.plot_var(Ieff2,eta,var,messung221,False)
+        #plt.xscale("log",nonpox="clip")
+        #plt.yscale("log",nonpox="clip")
+        plt.xlabel(ur"$I_eff2$")
+        plt.ylabel(ur"$\eta$")
+        plt.title("Wirkungsgrad")
+        plt.grid(True)
+        plt.show()
+def plot1c():
+        fig=plt.figure(figsize=(16,12))
+        P2= Ueff2*Ieff2
+        t1=ocd.plot_var(Ieff2,P,var,messung221,True)
+        t1=ocd.plot_var(Ieff2,P2,var,messung221,True,2)
+        #plt.xscale("log",nonpox="clip")
+        #plt.yscale("log",nonpox="clip")
+        plt.xlabel(ur"$I_eff2$")
+        plt.ylabel(ur"$P$")
+        plt.title("Vergleich der von $P1$ mit $P2$")
+        plt.grid(True)
+        plt.show()
+##################### 222
+messung222=ocd.open_csv("222.csv")
+>>>>>>> b9dee791187f2e45caf5604496a8606185957703
 def plot2a():
         fig=plt.figure(figsize=(16,12))
         t1=ocd.plot_var(Ieff2,Ueff2/Ueff1,var,messung222,False)
         #plt.xscale("log",nonpox="clip")
         #plt.yscale("log",nonpox="clip")
+<<<<<<< HEAD
         plt.xlabel(ur"$I_{eff2}$ in $A$")
+=======
+        plt.xlabel(ur"$I_eff2$")
+>>>>>>> b9dee791187f2e45caf5604496a8606185957703
         plt.ylabel(ur"$\frac{Ueff2}{Ueff1}$")
         plt.title(ur"Messung 222: Spannungsverhältnis $\frac{Ueff2}{Ueff1}$")
         plt.grid(True)
         plt.show()
 def plot2b():
         fig=plt.figure(figsize=(16,12))
+<<<<<<< HEAD
         t1=ocd.plot_var(Ieff2,Pw2,var,messung222,False)
         t1=ocd.plot_var(Ieff2,Pw1,var,messung222,False)
         #plt.xscale("log",nonpox="clip")
@@ -155,10 +220,20 @@ def plot2b():
         plt.xlabel(ur"$I_{eff2}$ in $A$")
         plt.ylabel(ur"$P_{s,1}$ in $W$")
         plt.title(ur"Messung 222: Sekundärsleistung")
+=======
+        P2= Ueff2*Ieff2
+        t1=ocd.plot_var(Ieff2,P2,var,messung222,False)
+        #plt.xscale("log",nonpox="clip")
+        #plt.yscale("log",nonpox="clip")
+        plt.xlabel(ur"$I_eff2$")
+        plt.ylabel(ur"$P_{s,1}$")
+        plt.title("Messung 222: Sekundärsleistung")
+>>>>>>> b9dee791187f2e45caf5604496a8606185957703
         plt.grid(True)
         plt.show()
 def plot2c():
         fig=plt.figure(figsize=(16,12))
+<<<<<<< HEAD
         t1=ocd.plot_var(Ieff2,-phi1,var,messung222,False,choices=np.arange(-1,-8,-1))
         t1=ocd.plot_var(Ieff2,phi1,var,messung222,False,choices=np.arange(0,17,1))
         t1=ocd.plot_var(Ieff2,phi1_theo_capa,var,messung222,False)
@@ -172,3 +247,27 @@ def plot2c():
         plt.show()
 
 
+=======
+        P2= Ueff2*Ieff2
+        eta= P2 / P
+        t1=ocd.plot_var(Ieff2,eta,var,messung222,False)
+        #plt.xscale("log",nonpox="clip")
+        #plt.yscale("log",nonpox="clip")
+        plt.xlabel(ur"$I_eff2$")
+        plt.ylabel(ur"$\eta$")
+        plt.title("Messung 222: Wirkungsgrad")
+        plt.grid(True)
+        plt.show()
+def plot2d():
+        fig=plt.figure(figsize=(16,12))
+        P2= Ueff2*Ieff2
+        t1=ocd.plot_var(Ieff2,P,var,messung222,False)
+        t1=ocd.plot_var(Ieff2,P2,var,messung222,False)
+        #plt.xscale("log",nonpox="clip")
+        #plt.yscale("log",nonpox="clip")
+        plt.xlabel(ur"$I_eff2$")
+        plt.ylabel(ur"$P$")
+        plt.title("Messung 222: Vergleich der von $P1$ mit $P2$")
+        plt.grid(True)
+        plt.show()
+>>>>>>> b9dee791187f2e45caf5604496a8606185957703
