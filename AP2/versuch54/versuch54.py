@@ -124,8 +124,8 @@ def plot1c():
 
 def plot1d():
         fig=plt.figure(figsize=(16,12))
-        t1=ocd.plot_var(Ieff2,phi1,var,messung221,False)
-        t1=ocd.plot_var(Ieff2,phi1_theo,var,messung221,False)
+        t1=ocd.plot_var(Ieff2,-phi1,var,messung221,False)
+        t1=ocd.plot_var(Ieff2,-phi1_theo,var,messung221,False)
         #plt.xscale("log",nonpox="clip")
         #plt.yscale("log",nonpox="clip")
         plt.xlabel(ur"$I_{eff2}$ in A",fontsize=16)
@@ -133,6 +133,7 @@ def plot1d():
         plt.title("Phasenverschiebung")
         plt.grid(True)
         plt.show()
+plot1d()
 
 ##################### 222
 def plot2a():
@@ -158,7 +159,8 @@ def plot2b():
         plt.show()
 def plot2c():
         fig=plt.figure(figsize=(16,12))
-        t1=ocd.plot_var(Ieff2,phi1,var,messung222,False)
+        t1=ocd.plot_var(Ieff2,-phi1,var,messung222,False,choices=np.arange(-1,-8,-1))
+        t1=ocd.plot_var(Ieff2,phi1,var,messung222,False,choices=np.arange(0,17,1))
         t1=ocd.plot_var(Ieff2,phi1_theo_capa,var,messung222,False)
         t1=ocd.plot_var(Ieff2,phi2_theo,var,messung222,False)
         #plt.xscale("log",nonpox="clip")
@@ -169,5 +171,4 @@ def plot2c():
         plt.grid(True)
         plt.show()
 
-plot2c()
 
