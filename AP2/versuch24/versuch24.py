@@ -115,11 +115,19 @@ def plot_messung3():
         fig=plt.figure(figsize=(16,12))
         plt.scatter(np.arange(0,4+1,1),H/1101,marker="^",s=80)
         poisson= lambda k: 1./(sc.factorial(k)*np.exp(mu))*mu**k
+        poisson_min= lambda k: 1./(sc.factorial(k)*np.exp(mu-sigma))*(mu-sigma)**k
+        poisson_max= lambda k: 1./(sc.factorial(k)*np.exp(mu+sigma))*(mu+sigma)**k
         normal_k= lambda k: 1./np.sqrt(2*np.pi*mu)*np.exp(-(k-mu)**2/(2*mu))
+        normal_k_min= lambda k: 1./np.sqrt(2*np.pi*(mu-sigma))*np.exp(-(k-mu-sigma)**2/(2*mu-2*sigma))
+        normal_k_max= lambda k: 1./np.sqrt(2*np.pi*(mu+sigma))*np.exp(-(k-mu+sigma)**2/(2*mu+2*sigma))
         b=np.linspace(0,5,100)
         b2=np.arange(0,5,1)
-        plt.plot(b, normal_k(b), 'g--', linewidth=1)
-	plt.plot(b, poisson(b), 'r--', linewidth=1)
+        #plt.plot(b, normal_k(b), 'g--', linewidth=1)
+        plt.plot(b, normal_k_min(b), 'g--', linewidth=1)
+        #plt.plot(b, normal_k_max(b), 'g--', linewidth=1)
+	#plt.plot(b, poisson(b), 'r--', linewidth=1)
+	plt.plot(b, poisson_min(b), 'r--', linewidth=1)
+	#plt.plot(b, poisson_max(b), 'r--', linewidth=1)
 	plt.scatter(b2, normal_k(b2),marker="x" ,c="b")
 	plt.scatter(b2, poisson(b2) ,marker="x" ,c="b")
         plt.title("Messung 3")
